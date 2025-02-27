@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## CESDE-s-assignaments
 
 Here you can find all information about our CESDE'S assignaments. 
@@ -15,7 +14,7 @@ Here you can find all information about our CESDE'S assignaments.
   8. if you are in master, PLEASE Write: git branch -M main.
   9. Write: git pull origin main (This updates your local repository whit all commits your partners made)
   10. If you want to update the general repository WRITE: git push origin main (BE CAREFUL)
-=======
+
 # CESDE-s-assignaments
 
 Here you can find all information about our CESDE'S assignaments. 
@@ -82,20 +81,15 @@ Here you can find all information about our CESDE'S assignaments.
       
       (!!)fatal: refusing to merge unrelated histories(!!)
 
-<<<<<<< HEAD
       Try this solution: git pull origin main --allow-unrelated-histories
-<<<<<<< HEAD
->>>>>>> 075a728fb3cf963b00923bbf39d323e69c3a25dd
-=======
-=======
+
       Try this solution:
 
        Write: git pull origin main --allow-unrelated-histories
->>>>>>> a933c6537a016d34faddd5ec141ebe987fcad22f
 
        then Write
 
        git add .
 
        git commit -m "Message"
->>>>>>> b7259e259f4c85579b811c1ff9c07e7071fff1a1
+
