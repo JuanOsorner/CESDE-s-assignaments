@@ -64,7 +64,9 @@ Here you can find all information about our CESDE'S assignaments.
       
       (!!)fatal: refusing to merge unrelated histories(!!)
 
-      Try this solution: git pull origin main --allow-unrelated-histories
+      Try this solution:
+
+       Write: git pull origin main --allow-unrelated-histories
 
        then Write
 
