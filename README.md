@@ -62,7 +62,7 @@ Here you can find all information about our CESDE'S assignaments.
 
   1. If you are trying to pull and you see this: 
       
-      fatal: refusing to merge unrelated histories
+      (!!)fatal: refusing to merge unrelated histories(!!)
 
       Try this solution: git pull origin main --allow-unrelated-histories
 
