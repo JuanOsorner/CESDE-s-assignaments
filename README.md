@@ -12,12 +12,12 @@ Here you can find all information about our CESDE'S assignaments.
   6. Go to GitHub web and copy the link of our repository (Where you can see CODE)
   7. Write: git remote add origin "HERE COPY THE CODE"
   8. Write git remote -v (To see if you are connected to the repository)
-  9. Write: git branch (you need to be in main).
-  10. if you are in master, PLEASE Write: git branch -M main.
-  11. Write: git pull origin main (This updates your local repository whit all commits your partners made)
-  12. Write: git add .
-  13. Write: git commit -m "Mensaje"
-  14. If you want to update the general repository WRITE: git push origin main (Warning: First checkout if you did a git pull)
+  9. Write: git add .
+  10. Write git commit -m "Message"
+  11. Write: git branch (you need to be in main).
+  12. if you are in master, PLEASE Write: git branch -M main.
+  13. Write: git pull origin main (This updates your local repository whit all commits your partners made)
+  14.  If you want to update the general repository WRITE: git push origin main (Warning: First checkout if you did a git pull)
   ### Steps to merge branches (Warning: to change branch write: git branch -M master or main)
   1. In master:
      
