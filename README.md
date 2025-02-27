@@ -57,3 +57,11 @@ Here you can find all information about our CESDE'S assignaments.
      (!!) git branch -d master (To delete master branch in your local repository)
      
      (!!) git push origin --delete master (To delete master branch in our global repository)
+
+  ### Errors and solutions 
+
+  1. If you are trying to pull and you see this: 
+      
+      fatal: refusing to merge unrelated histories
+
+      Try this solution: git pull origin main --allow-unrelated-histories
