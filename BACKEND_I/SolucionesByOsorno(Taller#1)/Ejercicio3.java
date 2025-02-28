@@ -9,7 +9,7 @@ public class Ejercicio3 {
         int x = 0, y = 1;
         System.out.println(x);
         for (int i = 2; i <= 12; i++) {
-            int z = x + y;
+            int z = x + y; //Recordemos que en programacion = no es igual sino un simbolo de actualizar datos
             System.out.println(z);
             y = z;
             x = x + y;
