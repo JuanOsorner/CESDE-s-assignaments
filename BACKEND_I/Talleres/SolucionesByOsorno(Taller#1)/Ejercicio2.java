@@ -14,19 +14,18 @@ public class Ejercicio2 {
         Random rd = new Random();
         int tamaño = palabra.length();
         char[] V = new char[tamaño]; //El tamaño es fijo (Esto puede ser una limitacion)
-        for (int i = 0; i < V.length; i++) {
+        for (int i = 0; i < V.length+1; i++) {
             int Num = rd.nextInt(100);
-            char L = palabra.charAt(Num%tamaño); //Muestra la letra en la posicion i
+            char L = palabra.charAt(Num%tamaño);
             if(!contieneL(V,L,i)){
-                V[i] = palabra.charAt(Num%tamaño); //Asi llenamos un vector letra por letra
-            //Num%tamaño es un numero menor a tamaño entonces nunca se saldra del rango
-            }
+                V[i] = L;
+            }  
         }
         return V;
     }
-    //Vamos a crear una funcion que detecte cuando una letra esta en el Array
-    public static boolean contieneL(char[] array, char letra, int act){
-        for(int j = 0; j < act; j++){
+    //Podria servir de algo
+    public static boolean contieneL(char[] array, char letra, int n){
+        for(int j = 0; j < n; j++){
             if(array[j] == letra){
                 return true;
             }
