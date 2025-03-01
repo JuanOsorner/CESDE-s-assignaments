@@ -14,11 +14,10 @@ public class Ejercicio2 {
     //problemas de aleoriedad
     public static char[] permutacion(String palabra){
         Random rd = new Random();
-        int tamaño = palabra.length();
-        char[] V = new char[tamaño]; //El tamaño es fijo (Esto puede ser una limitacion)
+        char[] V = new char[palabra.length()]; //El tamaño es fijo (Esto puede ser una limitacion)
         for (int i = 0; i < V.length+1; i++) {
             int Num = rd.nextInt(100);
-            char L = palabra.charAt(Num%tamaño);
+            char L = palabra.charAt(Num%palabra.length());
             if(!contieneL(V,L,i)){
                 V[i] = L;
             }  
@@ -26,10 +25,11 @@ public class Ejercicio2 {
         return V;
     }
     //(**)Creamos una funcion que recorra el vector antes de i y mande booleanos
+    //Esto es una buena idea cuando necesitemos hacer uso de condicionales (LLAMAR FUNCIONES BOOLEANAS)
     public static boolean contieneL(char[] array, char letra, int n){
         for(int j = 0; j < n; j++){
             if(array[j] == letra){
-                return true;
+                return true; 
             }
         }
         return false;
