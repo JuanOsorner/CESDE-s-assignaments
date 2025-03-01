@@ -14,5 +14,4 @@ public class Ejercicio4 {
         int M = (int) N; //HACEMOS LA CONVERSION A ENTERO
         return M;
     }
-    
 }
