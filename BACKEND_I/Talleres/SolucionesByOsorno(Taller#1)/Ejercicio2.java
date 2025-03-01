@@ -5,7 +5,13 @@ public class Ejercicio2 {
     // son o no anagramas
     public static void main(String[] args){
         String texto = "amor";
+        char[] W = new char[4];
+        //Mientras tanto creare este ciclo para llenar el vector W con la palabra amor
+        for (int i = 0; i < W.length; i++) {
+            W[i] = texto.charAt(i);
+        }
         System.out.println(permutacion(texto));
+        System.out.println(W);
     }
     //Hasta el momento el unico problema es que quizas no tome nunca la posicion de una letra
     //problemas de aleoriedad (HAY QUE REGAÑAR OBLIGAR AL NIÑO)
@@ -33,8 +39,8 @@ public class Ejercicio2 {
         return false;
     }
     //Crearemos otra funcion que compare dos vectores y mire si a uno le falta una o no otra letra
+    //Esta funcion compara si le faltan
     public static boolean comparacion(char[] A, char[] B){
-        
         return false;
     }
 }
