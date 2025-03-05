@@ -11,15 +11,16 @@ public class test {
         char b = '.';
         char [] V = new char[tamaño];
         for (int j = 0; j < V.length; j++) {
-            int enteroA = rd.nextInt(); 
+            int enteroA = rd.nextInt(9); 
             char a = S.charAt(enteroA%tamaño);
             if(b == a){
                 a = S.charAt((enteroA+1)%tamaño);
                 V[j] = a;
+                b = a;
             } else {
                 V[j] = a;
+                b = a;
             }
-            b = a;
         }
         return V;
     }
