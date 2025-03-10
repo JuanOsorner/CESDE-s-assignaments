@@ -1,9 +1,10 @@
-## CESDE-s-assignaments
+## 😎GitBash commands😎
 
-Here you can find all information about our CESDE'S assignaments. 
+### Steps to connect 🛸
 
-# Steps to use GitBash
+1️⃣Step: Go to GitHub web and download de .zip
 
+<<<<<<< HEAD
   1. Download de .ZIP
   2. Open the archive with GitBash
   3. Write: Git init
@@ -100,4 +101,7 @@ Here you can find all information about our CESDE'S assignaments.
 =======
   2. (**)git remote set-url origin https://github.com/usuario/repo.git(**)
 >>>>>>> c12cfe32794757bb36064b13850ef842efa25c78
+=======
+2️⃣Step: Open the folder with gitbash
+>>>>>>> 99175e15fe85ec153f1bb00c8769eea3e930e814
 
