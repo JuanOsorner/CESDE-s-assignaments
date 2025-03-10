@@ -40,11 +40,11 @@
 
 ➡️ Write: git branch (*To see in which branch you are working*)
 
-➡️ Write: git checkout -b (HERE WRITE THE NAME OF THE NEW BRANCH) after that write again git branch (⚠️​​YOU CAN UPDATE THE GITHUB WITH THIS NEW BRANCH⚠️​​)
+➡️ Write: git checkout -b origin/(HERE WRITE THE NAME OF THE NEW BRANCH) after that write again git branch (⚠️​​YOU CAN UPDATE THE GITHUB WITH THIS NEW BRANCH⚠️​​)
 
-​➡️ (*If you want to merge the new branch with main branch from main*) Write: git merge (HERE THE NAME THAT YOU MADE TO NEW BRANCH) 
+​➡️ (*If you want to merge the new branch with main branch from main*) Write: git merge origin/(HERE THE NAME THAT YOU MADE TO NEW BRANCH) 
 
-​➡️ (*To delete the branch*) Write: git branch -d (Name of the branch)
+​➡️ (*To delete the branch*) Write: git branch -d origin/(Name of the branch)
 
 ​➡️ (*PULL*)
 
