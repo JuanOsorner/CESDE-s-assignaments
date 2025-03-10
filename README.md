@@ -85,11 +85,19 @@ Here you can find all information about our CESDE'S assignaments.
 
       Try this solution:
 
+<<<<<<< HEAD
        Write: git pull origin main --allow-unrelated-histories
+=======
+       Write: git pull origin main --allow-unrelated-histories (Only if is neccesary)
+>>>>>>> c12cfe32794757bb36064b13850ef842efa25c78
 
        then Write
 
        git add .
 
        git commit -m "Message"
+<<<<<<< HEAD
+=======
+  2. (**)git remote set-url origin https://github.com/usuario/repo.git(**)
+>>>>>>> c12cfe32794757bb36064b13850ef842efa25c78
 
