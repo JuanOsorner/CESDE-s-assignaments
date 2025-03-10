@@ -44,6 +44,8 @@
 
 ​➡️ (*If you want to merge the new branch with main branch from main*) Write: git merge (HERE THE NAME THAT YOU MADE TO NEW BRANCH) 
 
+​➡️ (*To delete the branch*) Write: git branch -d (Name of the branch)
+
 ​➡️ (*PULL*)
 
 ​➡️ (*STATUS*)
