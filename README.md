@@ -28,11 +28,27 @@
 
 ➡️ (*PULL*) Write: git pull origin main (*If this bring you things from github*) do the steps (*STATUS*) and (*ADD*) 🟡
 
-➡️ (*PUSH*) (*If you want to push to github all things that you made*) Write: git push -u origin main 
+➡️ (*PUSH*) (*If you want to push to github all things that you made*) Write: git push -u origin main 🟢​
 
 ----> you need to login to github afther write this
 
 ----> After keep pushing writing: git push origin main
 
 (⚠️​WARNING⚠️​) If you dont pull before you should delete everything that you partners did 
+
+​🟣​​ (⚠️​DIFERENTS BRANCHES⚠️​​) If you want to work in another branch you can create it
+
+➡️ Write: git branch (*To see in which branch you are working*)
+
+➡️ Write: git checkout -b (HERE WRITE THE NAME OF THE NEW BRANCH) after that write again git branch (⚠️​​YOU CAN UPDATE THE GITHUB WITH THIS NEW BRANCH⚠️​​)
+
+​➡️ (*If you want to merge the new branch with main branch from main*) Write: git merge (HERE THE NAME THAT YOU MADE TO NEW BRANCH) 
+
+​➡️ (*PULL*)
+
+​➡️ (*STATUS*)
+
+​➡️ (*ADD*)
+
+​➡️ (*PUSH*)
 
