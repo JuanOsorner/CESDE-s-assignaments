@@ -38,9 +38,11 @@
 
 ​🟣​​ (⚠️​DIFERENTS BRANCHES⚠️​​) If you want to work in another branch you can create it
 
+(⚠️​THIS IS ONLY WHEN YOU ARE WORKING ALONE⚠️)
+
 ➡️ Write: git branch (*To see in which branch you are working*)
 
-➡️ (*To move from main to others branches*) Write: git checkout (NAME OF THE BRANCH)
+➡️ (*To move from main to others branches*) Write: git checkout (NAME OF THE BRANCH) (⚠️​IF CHECKOUT DOSENT WORK GOOD TRY⚠️) write: git branch -M (NAME OF BRANCH)
 
 ➡️ Write: git checkout -b (HERE WRITE THE NAME OF THE NEW BRANCH) after that write again git branch (⚠️​​YOU CAN UPDATE THE GITHUB WITH THIS NEW BRANCH⚠️​​)
 
@@ -56,3 +58,16 @@
 
 ​➡️ (*PUSH*)
 
+(⚠️​THIS IS WHEN YOU ARE WORKING WITH THE TEAM⚠️)
+
+➡️ Write: git branch (*To see in which branch you are working*)
+
+➡️ (*To move from main to others branches*) Write: git checkout (NAME OF THE BRANCH) (⚠️​IF CHECKOUT DOSENT WORK GOOD TRY⚠️) write: git branch -M (NAME OF BRANCH)
+
+➡️ Write: git checkout -b (HERE WRITE THE NAME OF THE NEW BRANCH) after that write again git branch (⚠️​​YOU CAN UPDATE THE GITHUB WITH THIS NEW BRANCH⚠️​​)
+
+➡️ Write: git push origin (HERE WRITE THE NAME OF THE NEW BRANCH) (⚠️​​TO MAKE UPDATES TO YOUR NEW BRANCH⚠️​​)
+
+➡️ (⚠️​​TO DOWNLOAD ALL THING THAT YOUR PATNERS MADE IN DIFFERENTS BRANCHES⚠️) Write git checkout main, then Write git fetch origin/main 
+
+➡️ (⚠️IF YOU ARE READY TO UPDATE THE MAIN⚠️) Write git merge origin/main
