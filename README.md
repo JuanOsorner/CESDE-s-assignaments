@@ -77,8 +77,11 @@
 Suppose that you are trying to pull the global repository and you see this message: 
 
 $ git pull origin main
+
 From https://github.com/JuanOsorner/CESDE-s-assignaments
+
  * branch            main       -> FETCH_HEAD
+ * 
 fatal: refusing to merge unrelated histories
 
 this happened since your local repository dosent have a comun ancestor with the global repository, so try this: 
@@ -88,28 +91,51 @@ this happened since your local repository dosent have a comun ancestor with the 
 you will see this message 
 
 Merge branch 'main' of https://github.com/JuanOsorner/CESDE-s-assignaments
+
 .# Please enter a commit message to explain why this merge is necessary,
+
 .# especially if it merges an updated upstream into a topic branch.
+
 .#
+
 .# Lines starting with '#' will be ignored, and an empty message aborts
+
 .# the commit.
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 ~
+
 .git/MERGE_MSG [unix] (12:25 21/03/2025)                                 1,1 All
+
 <CESDE/sm2/CESDE-s-assignaments-main/.git/MERGE_MSG" [unix] 6L, 301B 
 
 now follow the next steps: 
