@@ -1,5 +1,7 @@
 import { inicio } from "../Cajero/inicio.js"; //Debemos importar la clase (!!IMPORTAR DE LA MANERA CORRECTA!!)
 const ini = new inicio(); //Instanciamos
+import { registro } from "../Cajero/registro.js";
+const reg = new registro();
 while(true){
     console.log("------------------------------------------------");
     console.log("🧞​ Ingrese 1 si posee cuenta o 0 si no posee cuenta 🧞​");
@@ -29,19 +31,23 @@ while(true){
             console.log("Ingrese su identificacion");
             console.log("-------------------------");
             let ide = prompt();
+            reg.Identificacion = ide;
             console.log("\n--------------------------");
             console.log("Ingrese un nombre de usuario");
             console.log("----------------------------");
             let nusu = prompt();
+            reg.Usuario = nusu;
             console.log("\n---------------------------");
             console.log("Ingrese su correo electronico");
             console.log("-----------------------------");
             let correo = prompt();
+            reg.Correo = correo;
             while(true){
                 console.log("\n---------------------------");
                 console.log("Ingrese una contraseña");
                 console.log("-----------------------------");
                 let con1 = prompt();
+                reg.Clave = con1;
                 console.log("\n---------------------------");
                 console.log("Confirme su contraseña");
                 console.log("-----------------------------");
