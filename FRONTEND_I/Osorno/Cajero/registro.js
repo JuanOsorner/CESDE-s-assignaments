@@ -1,7 +1,7 @@
 import { inicio } from "../Cajero/inicio.js";
 export class registro extends inicio{
     constructor(){
-
+        super();
     }
     get Correo(){
         return this._Correo = Correo;

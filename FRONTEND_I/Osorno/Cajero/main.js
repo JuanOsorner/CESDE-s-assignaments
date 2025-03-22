@@ -2,6 +2,9 @@ import { inicio } from "../Cajero/inicio.js"; //Debemos importar la clase (!!IMP
 const ini = new inicio(); //Instanciamos
 import { registro } from "../Cajero/registro.js";
 const reg = new registro();
+import { almacenamiento } from "../Cajero/almacenamiento.js";
+const alm = new almacenamiento();
+let X = [];
 while(true){
     console.log("------------------------------------------------");
     console.log("🧞​ Ingrese 1 si posee cuenta o 0 si no posee cuenta 🧞​");
@@ -22,6 +25,9 @@ while(true){
             console.log("------------------");
             let con = prompt("Contraseña");
             ini.Clave = con;
+            if(X[0]!=ini.Usuario || X[1]!=ini.Clave){
+                console.log("NO EXISTEN ESOS DATOS")
+            }
             break;
         case "0":
             console.log("\n------------");
@@ -57,6 +63,7 @@ while(true){
                     console.log("⚠️​​ ERROR LAS CONTRASEÑAS NO COINCIDEN ⚠️​​")
                     console.log("-----------------------------------------");
                 }else{
+                    //X = alm.almacenar(reg.Identificacion,reg.Usuario,reg.Correo,reg.Clave);
                     break;
                 }
             }
