@@ -1,18 +1,18 @@
 export class inicio{
-    #Usuario = "";
-    #Clave = "";
+    //Alparecer no es necesario definir los atributos aqui
     constructor(){
     }
-    getUsuario(){
-        return this.#Usuario;
+    get Usuario(){
+        return this._Usuario; //Debemos colocar los _ para que use el getter and setter de manera interna
     }
-    setUsuario(Usuario){
-        this.#Usuario = Usuario;
+    //Vamos a hacer uso de dos funciones
+    set Usuario(Usuario){
+        this._Usuario = Usuario; 
     }
-    getClave(){
-        return this.#Clave;
+    get Clave(){
+        return this._Clave;
     }
-    setClave(){
-        this.#Clave = Clave;
+    set Clave(Clave){
+        this._Clave = Clave;
     }
 }
