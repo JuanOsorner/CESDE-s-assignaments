@@ -7,6 +7,7 @@ function Sumar(num1, num2){
     }
     return suma;
 }
+function Multiplicar
 //Toca crear una funcion que tome los datos y los retorne
 function SumarDatos(){
     let x = Number(document.getElementById('nro1').value);
@@ -15,3 +16,4 @@ function SumarDatos(){
     let result = document.getElementById('resultado');
     result.textContent  = "El resultado de la suma es: " + Sumar(x,y); 
 }
+
