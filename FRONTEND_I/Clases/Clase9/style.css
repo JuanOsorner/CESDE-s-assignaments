@@ -1,0 +1,67 @@
+/* Reset general y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f2f5; /* Color de fondo suave para todo el body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  }
+  
+  /* Contenedor principal centrado */
+  .container {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  /* Estilos para los elementos del formulario */
+  .container form label {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: #333;
+  }
+  
+  .container form input[type="number"],
+  .container form input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  /* Botones con colores que combinan y efecto hover */
+  .container form input[type="button"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container form input[type="button"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilo para el label del resultado */
+  #resultado {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4caf50;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+  }

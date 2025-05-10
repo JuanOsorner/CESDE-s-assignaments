@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="./css/Trasacciones.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero Electrónico</title>
+</head>
+<body>
+  <div class="atm">
+    <div class="screen">
+      <h1 class="title">Cajero Electrónico</h1>
+      <p class="subtitle">Bienvenido</p>
+      <div class="menu">
+        <button id="btn-consultar-saldo">Cuenta corriente</button>
+        <button id="btn-retirar-dinero">Cuenta de ahorros</button>
+        <button id="btn-consignar-dinero">Perfil</button>
+        <button id="btn-top-consultar">Consultar Saldo</button>
+        <!--NO SE MUESTRA A PRIORI-->
+        <dialog id="dlg">
+          <p id="saldoU"></p>
+          <button id="cerrar">Cerrar</button>
+        </dialog>
+        <button id="btn-top-registrar">Registrar Movimiento</button>
+        <dialog id="dlg1">
+            <table id="tabla1">
+
+            </table>
+            <button id="cerrar1">Cerrar</button>
+        </dialog>
+        <button id="btn-top-movimientos" class="boton">Consultar Movimientos</button>
+        <button id="btn-cerrar-sesion">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="keypad">
+        <button id="btn-1">1</button>
+        <button id="btn-2">2</button>
+        <button id="btn-3">3</button>
+        <button id="btn-4">4</button>
+        <button id="btn-5">5</button>
+        <button id="btn-6">6</button>
+        <button id="btn-7">7</button>
+        <button id="btn-8">8</button>
+        <button id="btn-9">9</button>
+        <button id="btn-star">*</button>
+        <button id="btn-0">0</button>
+        <button id="btn-pound">#</button>
+      </div>
+      <div class="card-container">
+        <div class="card-slot"></div>
+        <div class="card-slot"></div>
+      </div>
+      <div class="func-buttons">
+        <button id="btn-red"></button>
+        <button id="btn-yellow"></button>
+        <button id="btn-green"></button>
+        <button id="btn-white"></button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/Cuenta.js"></script>
+  <script type="module" src="js/main.js"></script> <!--TENER MUCHO CUIDADO CON ESTO-->
+</body>
+</html>
