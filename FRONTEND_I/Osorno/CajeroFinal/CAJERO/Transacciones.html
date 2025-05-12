@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="./css/Trasacciones.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero Electrónico</title>
+</head>
+<body>
+<!-- Login Section -->
+  <section id="login-section" class="active" aria-label="Formulario de inicio de sesión" style="display:flex; flex-direction: column; align-items:center;">
+    <h2>Iniciar Sesión</h2>
+    <label for="login-identificacion">Identificación</label>
+    <input type="text" id="login-identificacion" autocomplete="username" aria-required="true" />
+    <label for="login-password">Contraseña</label>
+    <input type="password" id="login-password" autocomplete="current-password" aria-required="true" />
+    <div id="login-error" class="error-message" role="alert" style="display:none;"></div>
+    <button id="btn-login" class="auth-btn" type="button">Ingresar</button>
+    <div id="to-register" class="switch-link" tabindex="0" role="button" aria-label="Ir a registro" style="margin-top:1rem; cursor:pointer;">¿No tienes cuenta? Regístrate aquí</div>
+  </section>
+
+  <!-- Register Section -->
+  <section id="register-section" aria-label="Formulario de registro" style="display:none; flex-direction: column; align-items:center;">
+    <h2>Registro</h2>
+    <label for="reg-nombre">Nombre</label>
+    <input type="text" id="reg-nombre" autocomplete="given-name" aria-required="true" />
+    <label for="reg-apellido">Apellido</label>
+    <input type="text" id="reg-apellido" autocomplete="family-name" aria-required="true" />
+    <label for="reg-direccion">Dirección</label>
+    <input type="text" id="reg-direccion" autocomplete="street-address" aria-required="true" />
+    <label for="reg-identificacion">Identificación</label>
+    <input type="text" id="reg-identificacion" autocomplete="username" aria-required="true" />
+    <label for="reg-password">Contraseña</label>
+    <input type="password" id="reg-password" autocomplete="new-password" aria-required="true" />
+    <div id="register-error" class="error-message" role="alert" style="display:none"></div>
+    <button id="btn-register" class="auth-btn" type="button">Registrarse</button>
+    <div id="to-login" class="switch-link" tabindex="0" role="button" aria-label="Volver a iniciar sesión" style="margin-top:1rem; cursor:pointer;">¿Ya tienes cuenta? Inicia sesión aquí</div>
+  </section>
+
+  <!-- ATM Section (cajero) -->
+  <div id="atm" class="atm" style="display:none;">
+    <div class="screen">
+      <h1 class="title">Cajero Electrónico</h1>
+      <p class="subtitle">Bienvenido</p>
+      <div class="menu">
+        <button id="btn-consultar-saldo">Cuenta corriente</button>
+        <button id="btn-retirar-dinero">Cuenta de ahorros</button>
+        <button id="btn-consignar-dinero">Perfil</button>
+        <button id="btn-top-consultar">Consultar Saldo</button>
+        <!--NO SE MUESTRA A PRIORI-->
+        <dialog id="dlg">
+          <p id="saldoU"></p>
+          <button id="cerrar">Cerrar</button>
+        </dialog>
+        <button id="btn-top-registrar">Registrar Movimiento</button>
+        <dialog id="dlg1">
+            <table id="tabla1"></table>
+            <button id="cerrar1">Cerrar</button>
+        </dialog>
+        <button id="btn-top-movimientos" class="boton">Consultar Movimientos</button>
+        <button id="btn-cerrar-sesion">Cerrar Sesión</button>
+      </div>
+    </div>
+    <div class="controls">
+      <div class="keypad">
+        <button id="btn-1">1</button>
+        <button id="btn-2">2</button>
+        <button id="btn-3">3</button>
+        <button id="btn-4">4</button>
+        <button id="btn-5">5</button>
+        <button id="btn-6">6</button>
+        <button id="btn-7">7</button>
+        <button id="btn-8">8</button>
+        <button id="btn-9">9</button>
+        <button id="btn-star">*</button>
+        <button id="btn-0">0</button>
+        <button id="btn-pound">#</button>
+      </div>
+      <div class="card-container">
+        <div class="card-slot"></div>
+        <div class="card-slot"></div>
+      </div>
+      <div class="func-buttons">
+        <button id="btn-red"></button>
+        <button id="btn-yellow"></button>
+        <button id="btn-green"></button>
+        <button id="btn-white"></button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/Cuenta.js"></script>
+  <script type="module" src="js/Cliente.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
