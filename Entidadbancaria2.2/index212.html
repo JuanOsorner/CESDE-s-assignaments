@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Banco Virtual</title>
+  <link rel="stylesheet" href="/styles2.css" />
+</head>
+<body>
+  <div class="container">
+   <div class="card">
+      <div class="tabs">
+        <button id="tab-registro" class="active" onclick="mostrarFormulario('registro')">Registro</button>
+        <button id="tab-login" onclick="mostrarFormulario('login')">Iniciar Sesión</button>
+      </div>
+
+      <!-- Formulario Registro (MANTIENE LOS MISMOS IDs) -->
+      <div id="formulario-registro" class="formulario">
+        <h2>Registro de Cliente</h2>
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="text" id="apellido" placeholder="Apellido" />
+        <input type="text" id="direccion" placeholder="Dirección" />
+        <input type="text" id="telefono" placeholder="Teléfono" />
+        <input type="text" id="Identificacion" placeholder="Identificación" />
+        <input type="text" id="id" placeholder="Usuario" />
+        <input type="password" id="password" placeholder="Contraseña" />
+        <select id="tipoCuenta">
+          <option value="ahorros">Cuenta de Ahorros</option>
+          <option value="corriente">Cuenta Corriente</option>
+        </select>
+        <button onclick="registrar()">Registrar</button>
+      </div>
+
+      <!-- Formulario Login (MANTIENE LOS MISMOS IDs) -->
+      <div id="formulario-login" class="formulario hidden">
+        <h2>Inicio de Sesión</h2>
+        <input type="text" id="login-id" placeholder="Usuario" />
+        <input type="password" id="login-password" placeholder="Contraseña" />
+        <button onclick="iniciarSesion()">Iniciar Sesión</button>
+      </div>
+   </div>
+
+    <!-- Dashboard (MANTIENE LOS IDs ORIGINALES PERO CON MEJOR DISEÑO) -->
+    <div id="dashboard" class="dashboard hidden">
+      <div class="dashboard-header">
+        <h2>Bienvenido, <span id="cliente-nombre"></span></h2>
+        <button onclick="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+      
+      <div class="info-section">
+        <!-- Información del cliente (usa los mismos datos que ya tenías) -->
+        <div class="info-card">
+          <h3>Información Personal</h3>
+          <div class="info-grid">
+            <div><strong>Nombre:</strong> <span id="nombre-completo"></span></div>
+            <div><strong>Identificación:</strong> <span id="info-identificacion"></span></div>
+            <div><strong>Dirección:</strong> <span id="info-direccion"></span></div>
+            <div><strong>Teléfono:</strong> <span id="info-telefono"></span></div>
+          </div>
+        </div>
+
+        <!-- Cuentas bancarias (usa el select original) -->
+        <div class="info-card">
+          <div class="info">
+            <label for="cuentas">Selecciona Cuenta:</label>
+            <select id="cuentas"></select>
+          </div>
+          <div class="info">
+            <label>Saldo Actual:</label>
+            <span id="saldo-actual">$0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operaciones (MANTIENE LOS IDs ORIGINALES) -->
+      <div class="operaciones-card">
+        <h3>Operaciones Bancarias</h3>
+        <div class="operaciones-grid">
+          <button class="operacion-btn" onclick="document.getElementById('tipo-operacion').value = 'Consignar'; document.getElementById('cuenta-destino').style.display = 'none'">
+            <i>💰</i> Consignar
+          </button>
+          <button class="operacion-btn" onclick="document.getElementById('tipo-operacion').value = 'retirar'; document.getElementById('cuenta-destino').style.display = 'none'">
+            <i>💸</i> Retirar
+          </button>
+          <button class="operacion-btn" onclick="document.getElementById('tipo-operacion').value = 'transferencia'; document.getElementById('cuenta-destino').style.display = 'block'">
+            <i>↗️</i> Transferencia
+          </button>
+          <button class="operacion-btn" onclick="document.getElementById('tipo-operacion').value = 'intereses'; document.getElementById('cuenta-destino').style.display = 'none'">
+            <i>📈</i> Intereses
+          </button>
+        </div>
+
+        <!-- Formulario de operación (MANTIENE LOS IDs ORIGINALES) -->
+        <div class="operaciones-form">
+          <select id="tipo-operacion" style="display: none;">
+            <option value="Consignar">Consignar</option>
+            <option value="retirar">Retirar</option>
+            <option value="intereses">Generar Intereses</option>
+            <option value="transferencia">Transferencia</option>
+          </select>
+          <input type="number" id="monto" placeholder="Monto" />
+          <input type="text" id="cuenta-destino" placeholder="Cuenta destino (solo transferencia)" style="display: none;"/>
+          <button onclick="realizarOperacion()">Ejecutar</button>
+        </div>
+      </div>
+
+      <!-- Movimientos (MANTIENE EL ID ORIGINAL) -->
+      <div class="movimientos-card">
+        <h3>Movimientos</h3>
+        <ul id="movimientos"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

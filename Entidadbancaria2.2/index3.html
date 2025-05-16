@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Virtual</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <section id="login-section">
+      <h2>Iniciar Sesión</h2>
+      <input type="text" id="login-id" placeholder="Identificación">
+      <input type="password" id="login-password" placeholder="Contraseña">
+      <button onclick="iniciarSesion()">Ingresar</button>
+    </section>
+
+    <section id="register-section">
+      <h2>Registro de Cliente</h2>
+      <input type="text" id="nombre" placeholder="Nombre">
+      <input type="text" id="apellido" placeholder="Apellido">
+      <input type="text" id="direccion" placeholder="Dirección">
+      <input type="text" id="id" placeholder="Identificación">
+      <input type="password" id="password" placeholder="Contraseña">
+      <select id="tipoCuenta">
+        <option value="ahorros">Cuenta de Ahorros</option>
+        <option value="corriente">Cuenta Corriente</option>
+      </select>
+      <button onclick="registrar()">Registrar</button>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <h2>Bienvenido, <span id="cliente-nombre"></span></h2>
+      <p><strong>Identificación:</strong> <span id="cliente-id"></span></p>
+      <p><strong>Dirección:</strong> <span id="cliente-direccion"></span></p>
+      <p><strong>Número de Cuenta:</strong> <span id="cliente-cuenta"></span></p>
+      <p><strong>Saldo:</strong> $<span id="cliente-saldo"></span></p>
+
+      <h3>Operaciones</h3>
+      <input type="number" id="monto" placeholder="Monto">
+      <button onclick="consignar()">Consignar</button>
+      <button onclick="retirar()">Retirar</button>
+
+      <h4>Transferencia</h4>
+      <input type="text" id="cuenta destino" placeholder="Cuenta destino">
+      <input type="number" id="monto a transferir" placeholder="Monto a transferir">
+      <button onclick="transferir()">Transferir</button>
+
+      <h4>Movimientos</h4>
+      <ul id="movimientos"></ul>
+
+      <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

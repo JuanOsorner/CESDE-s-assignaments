@@ -1,0 +1,454 @@
+
+/* Estilos base */
+:root {
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --secondary-color: #f72585;
+  --secondary-hover: #e91e63;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --danger-color: #f44336;
+  --light-bg: #f8f9fa;
+  --dark-text: #212529;
+  --gray-text: #6c757d;
+  --border-radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-text);
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Tarjeta principal y formularios */
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  width: 380px;
+  transition: var(--transition);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  border-radius: var(--border-radius);
+  background-color: var(--light-bg);
+  padding: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px 15px;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 1;
+  position: relative;
+  border-radius: calc(var(--border-radius) - 5px);
+}
+
+.tabs button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tabs button:hover:not(.active) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+input, select {
+  margin: 8px 0;
+  padding: 14px 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  transition: var(--transition);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+input:focus, select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+}
+
+button {
+  margin: 15px 0 5px;
+  padding: 14px;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Dashboard */
+.dashboard {
+  width: 900px;
+  max-width: 95%;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 30px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+}
+
+.dashboard-header button {
+  background-color: var(--danger-color);
+  padding: 10px 18px;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.dashboard-header button:hover {
+  background-color: #d32f2f;
+}
+
+.info-section {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.info-card {
+  flex: 1;
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.info-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-grid strong {
+  color: var(--gray-text);
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.info-grid span {
+  font-weight: 500;
+}
+
+.info {
+  margin-bottom: 15px;
+}
+
+.info label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gray-text);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.info select {
+  width: 100%;
+}
+
+#saldo-actual {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: 5px;
+}
+
+/* Operaciones */
+.operaciones-card {
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.operaciones-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.operaciones-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.operaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.operacion-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  border-radius: var(--border-radius);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin: 0;
+}
+
+.operacion-btn:nth-child(1) {
+  background-color: var(--primary-color);
+}
+
+.operacion-btn:nth-child(2) {
+  background-color: var(--warning-color);
+}
+
+.operacion-btn:nth-child(3) {
+  background-color: var(--secondary-color);
+}
+
+.operacion-btn:nth-child(4) {
+  background-color: var(--success-color);
+}
+
+.operacion-btn i {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.operacion-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.operaciones-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.operaciones-form input, 
+.operaciones-form select {
+  flex: 1;
+  margin: 0;
+}
+
+.operaciones-form button {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Movimientos */
+.movimientos-card {
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.movimientos-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.movimientos-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.movimientos-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.movimientos-card li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  transition: var(--transition);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.movimientos-card li:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.movimientos-card li:last-child {
+  border-bottom: none;
+}
+
+/* Para añadir colores a los diferentes tipos de movimientos, tu JS puede añadir clases */
+.movimiento-consignacion {
+  border-left: 4px solid var(--success-color);
+}
+
+.movimiento-retiro {
+  border-left: 4px solid var(--warning-color);
+}
+
+.movimiento-transferencia {
+  border-left: 4px solid var(--secondary-color);
+}
+
+.movimiento-intereses {
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .info-section {
+    flex-direction: column;
+  }
+  
+  .operaciones-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .card, .dashboard {
+    padding: 20px;
+    border-radius: calc(var(--border-radius) - 2px);
+  }
+  
+  .operaciones-form {
+    flex-direction: column;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .dashboard-header button {
+    width: 100%;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#dashboard {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out;
+}
