@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Bancario</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="login">
+        <h2>Inicio de Sesión</h2>
+        <input type="text" id="identificacion" placeholder="Número de Identificación">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button id="loginBtn">Iniciar Sesión</button>
+        <button id="registerBtn">Registrar Nuevo Usuario</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <div id="cajero" style="display:none;">
+        <h2>Menú Principal</h2>
+        <button id="consignarBtn">Consignar</button>
+        <button id="retirarBtn">Retirar</button>
+        <button id="transferirBtn">Transferir a otra cuenta</button>
+        <button id="consultarSaldoBtn">Consultar Saldo</button>
+        <button id="consultarMovimientosBtn">Consultar Movimientos</button>
+        <button id="logoutBtn">Cerrar Sesión</button>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

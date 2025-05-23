@@ -1,0 +1,260 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #a4bebd;
+  }
+  
+  /* Fondo oscuro con gradiente neón */
+  body {
+    background: #0f0f1a;
+    background: linear-gradient(135deg, #0f0f1a 0%, #1c1c36 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Contenedores con estilo futurista */
+  #login, #cajero {
+    background: rgba(0, 255, 247, 0.05);
+    border: 2px solid #00fff7;
+    border-radius: 20px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow:
+      0 0 10px #325251,
+      0 0 20px #325251,
+      0 0 40px #325251;
+    padding: 40px 50px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Glowing animated border */
+  #login::before, #cajero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      #00fff7,
+      #ff00c8,
+      #ff00c8,
+      #00fff7,
+      #00fff7
+    );
+    background-size: 400% 400%;
+    filter: blur(10px);
+    animation: glow 20s linear infinite;
+    z-index: 0;
+    border-radius: 20px;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+  }
+  
+  #login > *, #cajero > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  @keyframes glow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Títulos futuristas */
+  h2 {
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-size: 2.4rem;
+    letter-spacing: 0.18em;
+    color: #1e2c2b;
+    text-shadow:
+      0 0 8px #00fff7,
+      0 0 15px #00fff7,
+      0 0 20px #ff00c8;
+    text-transform: uppercase;
+  }
+  
+  /* Inputs neón */
+  input[type='text'],
+  input[type='password'] {
+    width: 100%;
+    padding: 14px 20px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 40px;
+    background: rgba(0, 255, 247, 0.1);
+    color: #00fff7;
+    font-size: 1.1rem;
+    box-shadow:
+      inset 0 0 8px #00fff7,
+      0 0 10px #00fff7;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input[type='text']::placeholder,
+  input[type='password']::placeholder {
+    color: #00fff7aa;
+    font-style: italic;
+  }
+  
+  input[type='text']:focus,
+  input[type='password']:focus {
+    background: rgba(0, 255, 247, 0.3);
+    outline: none;
+    box-shadow:
+      inset 0 0 15px #00fff7,
+      0 0 20px #ff00c8,
+      0 0 30px #ff00c8;
+  }
+  
+  /* Botones neón */
+  button {
+    width: 100%;
+    padding: 14px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: transparent;
+    color: #00fff7;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-shadow:
+      0 0 6px #00fff7,
+      0 0 12px #00fff7;
+    box-shadow:
+      0 0 8px #00fff7,
+      0 0 15px #00fff7;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    user-select: none;
+  }
+  
+  button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: -100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+  
+  button:hover::before {
+    left: 100%;
+  }
+  
+  button:hover {
+    color: #ff00c8;
+    box-shadow:
+      0 0 12px #ff00c8,
+      0 0 25px #ff00c8,
+      0 0 35px #ff00c8;
+    background-color: rgba(255, 0, 200, 0.15);
+  }
+  
+  /* Mensajes de alerta */
+  #loginMessage {
+    margin-top: 12px;
+    font-weight: 700;
+    color: #ff0055;
+    text-shadow: 0 0 8px #ff0055;
+    min-height: 22px;
+  }
+  
+  /* Cajero botones específicos */
+  #cajero button {
+    margin: 15px 0;
+    padding: 16px 0;
+    font-size: 1.2rem;
+    border-radius: 70px;
+    letter-spacing: 0.15em;
+    box-shadow:
+      0 0 15px #00fff7,
+      0 0 30px #00fff7;
+  }
+  
+  /* Movimiento lista futurista scroll */
+  #movimientosList {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-top: 20px;
+    text-align: left;
+    background: rgba(0, 255, 247, 0.1);
+    border: 1px solid #00fff7;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow:
+      inset 0 0 20px #00fff7;
+    font-size: 0.95rem;
+    color: #00fff7;
+    text-shadow: 0 0 4px #00fff7;
+  }
+  
+  /* Detalle de movimientos */
+  .movimientoItem {
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #00fff7aa;
+  }
+  
+  /* Scrollbar personalizado neón */
+  #movimientosList::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #movimientosList::-webkit-scrollbar-track {
+    background: rgba(0, 255, 247, 0.05);
+    border-radius: 15px;
+  }
+  
+  #movimientosList::-webkit-scrollbar-thumb {
+    background: #00fff7aa;
+    border-radius: 15px;
+    box-shadow: 0 0 8px #00fff7;
+  }
+  
+  /* Responsive para pantallas reducidas */
+  @media (max-width: 460px) {
+    #login, #cajero {
+      width: 95%;
+      padding: 30px 30px;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    button, input[type='text'], input[type='password'] {
+      font-size: 1rem;
+    }
+  }
+  
+  

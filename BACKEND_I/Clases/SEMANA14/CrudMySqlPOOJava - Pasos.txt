@@ -1,0 +1,239 @@
+--- pom.xml ---
+
+ <dependencies>
+        <!-- JDBC MySQL Driver -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId> <!-- ✅ Correcto -->
+            <version>8.0.33</version>
+        </dependency>
+
+    </dependencies>
+
+--- org.example\dao\LibroDAO.java ---
+
+package org.example.dao;
+
+import org.example.modelo.Libro;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class LibroDAO {
+    private final String url = "jdbc:mysql://localhost:3307/dblibraryjava";
+    private final String user = "root";
+    private final String password = "";
+
+    private Connection conectar() throws SQLException {
+        return DriverManager.getConnection(url, user, password);
+    }
+
+	// Método para probar si la conexión fue exitosa
+    public void probarConexion() {
+        try (Connection conn = conectar()) {
+            if (conn != null && !conn.isClosed()) {
+                System.out.println("Conexión exitosa a la base de datos.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al conectar a la base de datos:");
+            //e.printStackTrace();
+        }
+    }	
+
+    public void agregarLibro(Libro libro) {
+        String sql = "INSERT INTO libro (titulo, autor, anio) VALUES (?, ?, ?)";
+
+        try (Connection conn = conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, libro.getTitulo());
+            stmt.setString(2, libro.getAutor());
+            stmt.setInt(3, libro.getAnio());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Libro> listarLibros() {
+        List<Libro> lista = new ArrayList<>();
+        String sql = "SELECT * FROM libro";
+
+        try (Connection conn = conectar(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                Libro libro = new Libro(
+                        rs.getInt("id"),
+                        rs.getString("titulo"),
+                        rs.getString("autor"),
+                        rs.getInt("anio")
+                );
+                lista.add(libro);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return lista;
+    }
+
+    public void actualizarLibro(Libro libro) {
+        String sql = "UPDATE libro SET titulo=?, autor=?, anio=? WHERE id=?";
+
+        try (Connection conn = conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, libro.getTitulo());
+            stmt.setString(2, libro.getAutor());
+            stmt.setInt(3, libro.getAnio());
+            stmt.setInt(4, libro.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void eliminarLibro(int id) {
+        String sql = "DELETE FROM libro WHERE id=?";
+
+        try (Connection conn = conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+--- org.example\modelo\Libro.java ---
+
+package org.example.modelo;
+
+public class Libro {
+    private int id;
+    private String titulo;
+    private String autor;
+    private int anio;
+
+    public Libro() {
+    }
+
+    public Libro(int id, String titulo, String autor, int anio) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anio = anio;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+}
+
+--- Main.java ---
+
+package org.example;
+
+import org.example.dao.LibroDAO;
+import org.example.modelo.Libro;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+	// probar la conexión
+
+	LibroDAO olibro = new LibroDAO();
+        Connection conn = null;
+        try {
+            conn = olibro.conectar(); // Intenta conectar
+
+            // Verificación con condicional
+            if (conn != null && !conn.isClosed()) {
+                System.out.println("Conexión realizada correctamente.");
+            } else {
+                System.out.println("Conexión fallida.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al conectar con la base de datos");
+            //e.printStackTrace();
+        }
+
+	// fin probar la conexión
+        Scanner scanner = new Scanner(System.in);
+        LibroDAO dao = new LibroDAO();
+	
+        int opcion;
+
+        do {
+            System.out.println("\n--- CRUD Libros ---");
+            System.out.println("1. Listar libros");
+            System.out.println("2. Agregar libro");
+            System.out.println("3. Actualizar libro");
+            System.out.println("4. Eliminar libro");
+            System.out.println("0. Salir");
+            System.out.print("Opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcion) {
+                case 1 -> dao.listarLibros().forEach(libro ->
+                        System.out.println(libro.getId() + " | " + libro.getTitulo() + " | " + libro.getAutor() + " | " + libro.getAnio()));
+                case 2 -> {
+                    System.out.print("Título: ");
+                    String titulo = scanner.nextLine();
+                    System.out.print("Autor: ");
+                    String autor = scanner.nextLine();
+                    System.out.print("Año: ");
+                    int anio = scanner.nextInt(); scanner.nextLine();
+                    dao.agregarLibro(new Libro(0, titulo, autor, anio));
+                }
+                case 3 -> {
+                    System.out.print("ID del libro: ");
+                    int id = scanner.nextInt(); scanner.nextLine();
+                    System.out.print("Nuevo título: ");
+                    String nuevoTitulo = scanner.nextLine();
+                    System.out.print("Nuevo autor: ");
+                    String nuevoAutor = scanner.nextLine();
+                    System.out.print("Nuevo año: ");
+                    int nuevoAnio = scanner.nextInt(); scanner.nextLine();
+                    dao.actualizarLibro(new Libro(id, nuevoTitulo, nuevoAutor, nuevoAnio));
+                }
+                case 4 -> {
+                    System.out.print("ID a eliminar: ");
+                    int idEliminar = scanner.nextInt(); scanner.nextLine();
+                    dao.eliminarLibro(idEliminar);
+                }
+            }
+        } while (opcion != 0);
+
+    }
+}
+
+
+

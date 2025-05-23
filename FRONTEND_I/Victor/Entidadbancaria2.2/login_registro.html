@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Banco Virtual</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="tabs">
+        <button id="tab-registro" class="active" onclick="mostrarFormulario('registro')">Registro</button>
+        <button id="tab-login" onclick="mostrarFormulario('login')">Iniciar Sesión</button>
+      </div>
+
+      <!-- Formulario Registro -->
+      <div id="formulario-registro" class="formulario">
+        <h2>Registro de Cliente</h2>
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="text" id="apellido" placeholder="Apellido" />
+        <input type="text" id="direccion" placeholder="Dirección" />
+        <input type="text" id="telefono" placeholder="Teléfono" />
+        <input type="text" id="Identificacion" placeholder="Identificación" />
+        <input type="text" id="id" placeholder="Usuario" />
+        <input type="password" id="password" placeholder="Contraseña" />
+        <select id="tipoCuenta">
+          <option value="ahorros">Cuenta de Ahorros</option>
+          <option value="corriente">Cuenta Corriente</option>
+        </select>
+        <button onclick="registrar()">Registrar</button>
+      </div>
+
+      <!-- Formulario Login -->
+      <div id="formulario-login" class="formulario hidden">
+        <h2>Inicio de Sesión</h2>
+        <input type="text" id="login-id" placeholder="Usuario" />
+        <input type="password" id="login-password" placeholder="Contraseña" />
+        <button onclick="iniciarSesion()">Iniciar Sesión</button>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard hidden">
+      <h2>Bienvenido, <span id="cliente-nombre"></span></h2>
+      
+      <div class="info">
+        <label for="cuentas">Selecciona Cuenta:</label>
+        <select id="cuentas"></select>
+      </div>
+
+      <div class="info">
+        <label>Saldo Actual:</label>
+        <span id="saldo-actual">$0</span>
+      </div>
+
+      <div class="operaciones">
+        <h3>Operaciones</h3>
+        <select id="tipo-operacion">
+          <option value="Consignar">Consignar</option>
+          <option value="retirar">Retirar</option>
+          <option value="intereses">Generar Intereses</option>
+          <option value="transferencia">Transferencia</option>
+        </select>
+        <input type="number" id="monto" placeholder="Monto" />
+        <input type="text" id="cuenta-destino" placeholder="Cuenta destino (solo si aplica)" />
+        <button onclick="realizarOperacion()">Ejecutar</button>
+      </div>
+
+      <div class="movimientos">
+        <h3>Movimientos</h3>
+        <ul id="movimientos"></ul>
+      </div>
+
+      <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
