@@ -47,6 +47,35 @@ public class Main {
                             ovh.agregarVehiculo(new Vehiculo(Aplaca,Amarca,Aprecio));
                             System.out.println("Exito");
                             break;
+                        case 2:
+                            System.out.println("Numero de placa a buscar: ");
+                            String findNroplaca = sc.nextLine();
+                            //Invocar el metodo buscarVehiculoxPlaca
+                            if(!ovh.buscarVehiculoxPlaca(findNroplaca).isEmpty()){
+                                //Recorrer la lista que devolvio el metodo
+                                ovh.buscarVehiculoxPlaca(findNroplaca).forEach(vehiculo ->
+                                        System.out.println(vehiculo.getNroplaca()+"-"+vehiculo.getMarca()+"-"+vehiculo.getPrecio()));
+                                //BUSCAR SOBRE ESTA PARTE DEL CODIGO
+                            }else{
+                                System.out.println("Numero de placa INEXISTENTE. Intentelo con otra");
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Ingrese el numero de placa: ");
+                            String actnumeroPlaca = sc.nextLine();
+                            if(!ovh.buscarVehiculoxPlaca((actnumeroPlaca)).isEmpty()){
+                                System.out.println("Ingrese la nueva placa");
+                                String actmarca = sc.nextLine();
+                                System.out.println("Ingrese el nuevo precio");
+                                Integer actPrecio = sc.nextInt();
+                                sc.nextLine();
+                                Vehiculo Vehiculo  = new Vehiculo(actnumeroPlaca, actmarca, actPrecio);
+                                ovh.actualizarVehiculo(Vehiculo);
+                                System.out.println("Vehculo actualizado correctamente");
+                            }else{
+                                System.out.println("Numero de placa NO EXISTE.");
+                            }
+                            break;
                     }
                 } while(opcion !=6);
             }
