@@ -72,6 +72,36 @@
 
 ➡️ (⚠️IF YOU ARE READY TO UPDATE THE MAIN⚠️) Write git merge origin/main
 
+(☢️STEPS TO USE SSH☢️)
+
+To configure SSH on GitHub, follow these steps:
+
+Generate an SSH key:
+
+Open your terminal.
+
+Run: ssh-keygen -t ed25519 -C "your_email@example.com" and follow the instructions to create the key.
+
+Start the SSH agent:
+
+Run: eval "$(ssh-agent -s)".
+
+Then, add your private key: ssh-add ~/.ssh/id_ed25519.
+
+Copy the public key:
+
+Use cat ~/.ssh/id_ed25519.pub to display it and copy the output.
+
+Add the key to GitHub:
+
+Go to GitHub, under "Settings" > "SSH and GPG keys", and click "New SSH key". Paste your public key there.
+
+Test the connection:
+
+Run: ssh -T git@github.com. You should see a success message.
+
+With this, you will have securely and efficiently configured SSH for GitHub.
+
 ☣️​ (🔺​☢️​ERRORS AND SOLUTIONS☢️​🔺​)
 
 Suppose that you are trying to pull the global repository and you see this message: 
