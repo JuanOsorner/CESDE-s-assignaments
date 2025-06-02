@@ -82,9 +82,15 @@ To configure SSH on GitHub, follow these steps:
 
    ➡️ Run: ssh-keygen -t ed25519 -C "your_email@example.com" and follow the instructions to create the key.
 
+🔴 -t is the level of incryption
+
+☢️❗Copy the location of your private key: EXAMPLE .ssh/id_ed25519.pub
+
 2️⃣ Start the SSH agent:
 
    ➡️ Run: eval "$(ssh-agent -s)".
+
+🔴 THIS IS TO SEE IF YOU SSH AGENT IS ALIVE (EXAMPLE: agent pid 17218).
 
    ➡️ Then, add your private key: ssh-add ~/.ssh/id_ed25519.
 
