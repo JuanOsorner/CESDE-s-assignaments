@@ -26,6 +26,10 @@
 
 ➡️ (*FETCH*) Write: git fecth origin RAMA (ITS BETTER USE THIS CAUSE FETCH DONT MERGE)🟡
 
+      git fetch compañero
+      git diff nombre-de-tu-rama compañero/rama-compañero   # Revisar cambios
+      git merge compañero/rama-compañero                      # Integrar si quieres
+
 ➡️ (*STATUS*) Write: git status (*Checkout that everything is good*) also you can write: git status -s 🟡​
 
 ➡️ (*ADD*) (*If you have a lot things that you need add*) Write: git add . (*Otherwise*) Write git add (HERE THE ARCHIVE) 🟡​ 
