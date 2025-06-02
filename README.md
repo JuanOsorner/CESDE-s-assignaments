@@ -20,13 +20,15 @@
 
 ​➡️ (*ADD ORIGIN*) Write: git remote add origin (⚠️​HERE COPY THE HTTPS CODE⚠️​) (*To see if it is working good*) write: git remote -v🔴​
 
-➡️ (*BRANCH*) Write: git branch, if you are working on master branch, please write: git branch -M main 🔴​
+➡️ (*BRANCH*) Write: git branch, if you are working on master branch, please write: git swtich RAMA 🔴​
+
+➡️ (*PULL*) Write: git pull origin main 🟡
+
+➡️ (*FETCH*) Write: git fecth origin RAMA (ITS BETTER USE THIS CAUSE FETCH DONT MERGE)🟡
 
 ➡️ (*STATUS*) Write: git status (*Checkout that everything is good*) also you can write: git status -s 🟡​
 
 ➡️ (*ADD*) (*If you have a lot things that you need add*) Write: git add . (*Otherwise*) Write git add (HERE THE ARCHIVE) 🟡​ 
-
-➡️ (*PULL*) Write: git pull origin main (*If this bring you things from github*) do the steps (*STATUS*) and (*ADD*) 🟡
 
 ➡️ (*PUSH*) (*If you want to push to github all things that you made*) Write: git push -u origin main 🟢​
 
@@ -48,7 +50,7 @@
 
 ​➡️ (*If you want to merge the new branch with main branch from main*) Write: git merge origin/(HERE THE NAME THAT YOU MADE TO NEW BRANCH) 
 
-​➡️ (*To delete the branch*) Write: git branch -d (Name of the branch) afther that write git push origin --delete (NAME OF THE BRANCH)
+​➡️ (*To delete the branch*) Write git push origin --delete (NAME OF THE BRANCH)
 
 ​➡️ (*PULL*)
 
