@@ -410,6 +410,8 @@ Creating custom workflows
 
 Running personalized scripts
 
+(THIS IS THE REPOSITORI IS PRIVATE)
+
 ### )(❗) run in git bash if you are not a collaborator
 
     git clone <HTTPS-URL-HERE>
