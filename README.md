@@ -1,196 +1,417 @@
-## GITHUB COMMANDS 😎🤙
+# Git & GitHub — Quick Reference 🚀
 
-### STEPS TO USE GITBASH AND GITHUB 
+## 1. 📥 Download and Prepare the Project
 
-🔵​​ Go to github web and download the .zip (Where you can see CODE)
+Visit GitHub and download the repository as a .zip.
 
-🔵​​ Extract the .zip whatever you want, after that open the folder whit gitbash 
+Extract it to a location of your choice.
 
-➡️ Write: git init ​
+or in your folder open it with git bash and run: 
 
-🔵​​ (⚠️CONFIGURATIONS⚠️​) You need config the local repository, please follow the next steps
+    git clone <HTTPS-URL-HERE>
 
-​➡️​ Write: git config --global user.name "YourName"
-   
-➡️​ Write: git config --global user.email "YourEmail"
+Open the project folder using Git Bash and run:
 
-​➡️​ Write: git config --global core.autocrlf true (If you're working on windowns) or input (If you're workin on mac or linux)
+    git init
 
-🔵​ (⚠️​CONNECTION⚠️​) Go to git hub web and copy the HTTPS CODE
+## 2. 🛠️ Initial Configuration
 
-​➡️ (*ADD ORIGIN*) Write: git remote add origin (⚠️​HERE COPY THE HTTPS CODE⚠️​) (*To see if it is working good*) write: git remote -v🔴​
+Set your global identity:
 
-➡️ (*BRANCH*) Write: git branch, if you are working on master branch, please write: git swtich RAMA 🔴​
+    git config --global user.name "YourName"
+    git config --global user.email "youremail@example.com"
 
-➡️ (*PULL*) Write: git pull origin main 🟡
+Configure line endings based on your OS:
 
-➡️ (*FETCH*) Write: git fecth origin RAMA (ITS BETTER USE THIS CAUSE FETCH DONT MERGE)🟡
+Windows:
 
-      git fetch compañero
-      git diff nombre-de-tu-rama compañero/rama-compañero   # Revisar cambios
-      git merge compañero/rama-compañero                      # Integrar si quieres
+    git config --global core.autocrlf true
 
-➡️ (*STATUS*) Write: git status (*Checkout that everything is good*) also you can write: git status -s 🟡​
+macOS/Linux:
 
-➡️ (*ADD*) (*If you have a lot things that you need add*) Write: git add . (*Otherwise*) Write git add (HERE THE ARCHIVE) 🟡​ 
+    git config --global core.autocrlf input
 
-➡️ (*PUSH*) (*If you want to push to github all things that you made*) Write: git push -u origin main 🟢​
+### 💡 Pro tip
 
-----> you need to login to github afther write this
 
-----> After keep pushing writing: git push origin main
+To have git fetch always remove stale remote references, set:
 
-(⚠️​WARNING⚠️​) If you dont pull before you should delete everything that you partners did 
+    git config --global fetch.prune true
 
-​🟣​​ (⚠️​DIFERENTS BRANCHES⚠️​​) If you want to work in another branch you can create it
+## 3. 🌐 Connect to the Remote Repository
 
-(⚠️​THIS IS ONLY WHEN YOU ARE WORKING ALONE⚠️)
+Copy the HTTPS URL of the remote repo.
 
-➡️ Write: git branch (*To see in which branch you are working*)
+Add it as the origin:
 
-➡️ (*To move from main to others branches*) Write: git checkout (NAME OF THE BRANCH) (⚠️​IF CHECKOUT DOSENT WORK GOOD TRY⚠️) write: git branch -M (NAME OF BRANCH)
+    git remote add origin <HTTPS-URL-HERE>
+    git remote -v  # Verify the remote settings
 
-➡️ Write: git checkout -b (HERE WRITE THE NAME OF THE NEW BRANCH) after that write again git branch (⚠️​​YOU CAN UPDATE THE GITHUB WITH THIS NEW BRANCH⚠️​​)
+## 4. 🧠 Working with Branches
 
-​➡️ (*If you want to merge the new branch with main branch from main*) Write: git merge origin/(HERE THE NAME THAT YOU MADE TO NEW BRANCH) 
+### 4.1 View and Switch Branches
 
-​➡️ (*To delete the branch*) Write git push origin --delete (NAME OF THE BRANCH)
+    git branch           # List local branches
+    git checkout <branch> # Switch to an existing branch
 
-​➡️ (*PULL*)
+If git checkout fails, try: (☢️This is the branch dosent exist☢️)
 
-​➡️ (*STATUS*)
+    git fetch origin NAME OF BRANCH
 
-​➡️ (*ADD*)
+### 4.2 Create a Branch and Push It
 
-​➡️ (*PUSH*)
+    git checkout -b <new-branch>
+    git push origin <new-branch>
 
-(⚠️​THIS IS WHEN YOU ARE WORKING WITH THE TEAM⚠️)
+### 4.3 Merge a Branch into main
 
-➡️ Write: git branch (*To see in which branch you are working*)
+From the main branch:
 
-➡️ (*To move from main to others branches*) Write: git checkout (NAME OF THE BRANCH) (⚠️​IF CHECKOUT DOSENT WORK GOOD TRY⚠️) write: git branch -M (NAME OF BRANCH)
+    git merge origin/<your-branch>
+    git push origin main
 
-➡️ Write: git checkout -b (HERE WRITE THE NAME OF THE NEW BRANCH) after that write again git branch (⚠️​​YOU CAN UPDATE THE GITHUB WITH THIS NEW BRANCH⚠️​​)
+### 4.4 Delete a Remote Branch
 
-➡️ Write: git push origin (HERE WRITE THE NAME OF THE NEW BRANCH) (⚠️​​TO MAKE UPDATES TO YOUR NEW BRANCH⚠️​​)
+    git push origin --delete <branch>
 
-➡️ (⚠️​​TO DOWNLOAD ALL THING THAT YOUR PATNERS MADE IN DIFFERENTS BRANCHES⚠️) Write git checkout main, then Write git fetch origin/main 
+5. 🔄 Keep Your Repo in Sync
 
-➡️ (⚠️IF YOU ARE READY TO UPDATE THE MAIN⚠️) Write git merge origin/main
+Working alone 🚹:
 
-(☢️STEPS TO USE SSH☢️)
+    git pull origin main
 
-To configure SSH on GitHub, follow these steps:
+If you see 👀:
 
-1️⃣ Generate an SSH key:
+    fatal: refusing to merge unrelated histories
 
-   ➡️ Open your terminal.
+run ◀️:
 
-   ➡️ Run: ssh-keygen -t ed25519 -C "your_email@example.com" and follow the instructions to create the key.
+    git pull origin main --allow-unrelated-histories
 
-🔴 -t is the level of incryption
+Then resolve any conflicts, and check status:
 
-☢️❗Copy the location of your private key: EXAMPLE .ssh/id_ed25519.pub
+    git status  # or git status -s
 
-2️⃣ Start the SSH agent:
+Working with a team 🤼‍♂️:
 
-   ➡️ Run: eval "$(ssh-agent -s)".
+Check current branch:
 
-🔴 THIS IS TO SEE IF YOU SSH AGENT IS ALIVE (EXAMPLE: agent pid 17218).
+    git status
 
-   ➡️ Then, add your private key: ssh-add ~/.ssh/id_ed25519.
+Stage changes:
 
-3️⃣ Copy the public key:
+    git add .
 
-   ➡️ Use cat ~/.ssh/id_ed25519.pub to display it and copy the output.
+    # or add specific files:
 
-4️⃣ Add the key to GitHub:
+    git add <file>
 
-   ➡️ Go to GitHub, under "Settings" > "SSH and GPG keys", and click "New SSH key". Paste your public key there.
+Commit your changes:
 
-5️⃣ Test the connection:
+    git commit -m "Descriptive message"
 
-   ➡️ Run: ssh -T git@github.com. You should see a success message.
+Push your branch:
 
-With this, you will have securely and efficiently configured SSH for GitHub.
+    git push origin <your-branch>
 
-☣️​ (🔺​☢️​ERRORS AND SOLUTIONS☢️​🔺​)
+To get updates from others into main:
 
-Suppose that you are trying to pull the global repository and you see this message: 
+    git checkout main
+    git fetch origin/main
+    git merge origin/main
 
-$ git pull origin main
 
-From https://github.com/JuanOsorner/CESDE-s-assignaments
+## 6. 🔒 Optional: SSH Setup for Secure Access (☢️This is your working in your own PC☢️)
+Generate your SSH key:
 
- * branch            main       -> FETCH_HEAD
- * 
-fatal: refusing to merge unrelated histories
+    ssh-keygen -t ed25519 -C "youremail@example.com"
 
-this happened since your local repository dosent have a comun ancestor with the global repository, so try this: 
+Start the SSH agent and add your key:
 
-➡️ Write: git pull origin main --allow-unrelated-histories 🔴
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
 
-you will see this message 
+Copy your public key:
 
-Merge branch 'main' of https://github.com/JuanOsorner/CESDE-s-assignaments
+    cat ~/.ssh/id_ed25519.pub
 
-.# Please enter a commit message to explain why this merge is necessary,
+In GitHub: go to Settings → SSH and GPG keys → New SSH key, and paste your public key.
 
-.# especially if it merges an updated upstream into a topic branch.
+Test the connection:
 
-.#
+    ssh -T git@github.com
 
-.# Lines starting with '#' will be ignored, and an empty message aborts
+# Extra 😎
 
-.# the commit.
+## 1. ⏪⏩git revert and git reset
 
-~
+🔁 git reset
 
-~
+What it does:
 
-~
+Moves the current branch pointer (HEAD) back to a chosen commit.
 
-~
+Ideal for rewriting local history on branches that haven't been shared.
 
-~
+Modes:
+--soft: keep changes staged, HEAD moves only.
 
-~
+--mixed (default): unstages changes; working directory remains intact.
 
-~
+--hard: discards all changes up to that commit, including your working directory
 
-~
+Use cases:
 
-~
+Undo local commits: e.g. remove your last two commits:
 
-~
+    git reset --mixed HEAD~2
 
-~
+Unstage files:
 
-~
+    git reset HEAD <file>
 
-~
+Start over from history (dangerous!):
 
-~
+    git reset --hard HEAD~1
 
-~
+Warning: --hard can permanently delete work — avoid if unsure
 
-~
+## 2. 🔄 git revert
 
-.git/MERGE_MSG [unix] (12:25 21/03/2025)                                 1,1 All
+What it does:
 
-<CESDE/sm2/CESDE-s-assignaments-main/.git/MERGE_MSG" [unix] 6L, 301B 
+Does not change history or remove commits.
 
-now follow the next steps: 
+Creates a new commit that undoes a previous one 
 
-➡️ Press: i, afther that you will see in the end of document this change: 🟡​
+Use cases:
+Safely undo changes on public/shared branches:
 
-.git/MERGE_MSG[+] [unix] (12:25 21/03/2025)                              1,1 All
--- INSERT --
+    git revert <commit-hash>
 
-➡️ Write a message: 🟡​
+Revert without editing message:
 
-example: Actualizando errores
+    git revert --no-edit <commit-hash>
 
-➡️ Press: esc 
+This adds a reverse commit to preserve the history while removing the effects of a past commit.
 
-➡️ Write: :wq 🟢​
+## 🧽 Deleting Remote and Local Branches in Git
+
+When you delete a branch on GitHub (remote), it doesn't remove the branch from your local repository. Here's how to clean up both remote-tracking references and your own local branch safely:
+
+🔹 Step 1: Switch to a safe branch
+First, make sure you're not on the branch you want to delete. Switch to a stable branch like main or develop:
+
+    git checkout main
+
+🔹 Step 2: Remove the local branch
+
+To delete your local branch only if it’s already merged:
+
+    git branch -d branch-name
+
+If the branch has unmerged commits and you still want to delete, you can force it (use with caution):
+
+    git branch -D branch-name
+
+🔹 Step 3: Prune remote-tracking references
+
+Deleting the branch remotely (on GitHub) doesn't update your local metadata—you’ll still see something like origin/branch-name. To clean up those stale references:
+
+    git fetch --prune
+
+Or use this equivalent command:
+
+    git remote prune origin
+
+This removes any local references to remote branches that no longer exist 
+
+# 🛡️ Common Error & Fix
+Error:
+
+    fatal: refusing to merge unrelated histories
+
+Fix:
+
+    git pull origin main --allow-unrelated-histories
+
+Then save and close the editor (e.g., in Vim: press i, write your message, then Esc, followed by :wq).
+
+# github's tricks 😈
+
+## Projects
+
+### 🚀 Step 1: Create a New Project
+
+- Go to your profile or organization page and click the Projects tab.
+
+- Click New project.
+
+- Choose a template (Board, Table, Roadmap) or start blank.
+
+- Name your project and click Create
+
+### 📋 Step 2: Add a Description and README
+
+- Click the Settings (⋯) icon.
+
+- Add a short description to describe your project’s purpose.
+
+- Write a README with usage instructions, links, or team notes 
+
+### ✅ Step 3: Add Issues or Draft Items
+
+- Paste an existing issue or PR URL into the “Add item” field.
+
+- Or create draft issues directly by typing and pressing Enter
+
+### 🗂️ Step 4: Customize with Fields & Views
+
+- Click Add field to create custom properties like:
+
+- Iteration field for sprints
+
+- Priority field (e.g., High/Medium/Low 
+
+### 🔁 Step 5: Automate Workflows
+
+Enable automation rules such as:
+
+- Auto-moving closed issues to “Done”
+
+- Archiving items after completion
+
+- Automatically adding new items based on filters
+
+### 📈 Step 6: Use Insights & Tracking
+
+Explore built-in analytics like charts and project insights to track your progress and performance .
+
+### 🛠️ Step 7: Maintain & Collaborate
+
+- Use the README to document project usage.
+
+- Communicate with updates, mentions, and assign collaborators
+
+- Break large tasks into smaller issues and track each one
+
+# 🍕🍕TOKENKS🍕🍕 
+
+If you want work with in a private repositorie check this: 
+
+How to Use GitHub Tokens for Secure Access to Private Repositories
+
+✅ Can we share access to a private repository with someone else?
+Yes.
+
+🔐 What tool does GitHub provide to grant someone access to a private repository?
+Personal Access Tokens (PATs).
+
+Step-by-Step Guide: How to Create a Personal Access Token (Classic) on GitHub
+Go to your GitHub profile photo (top right) and click on it.
+A dropdown menu will appear.
+
+Select “Settings” from the menu.
+
+Scroll down the left sidebar and click on “Developer settings.”
+
+You’ll see three sections:
+
+GitHub Apps: Apps with permissions on your account.
+
+OAuth Apps: External apps that can authenticate with your GitHub account.
+
+Personal access tokens: The section we’re interested in. Click it.
+
+Click on “Tokens (classic)” under the “Personal access tokens” section.
+
+Next, click the dropdown button labeled “Generate new token” and choose “Generate new token (classic).”
+
+You’ll be taken to a form to configure your new token:
+
+Give your token a descriptive name (e.g., “Sofia-repo-access”).
+
+Set the token’s expiration period.
+
+Choose the permissions (scopes) you want to grant the token.
+
+Once configured, click the “Generate token” button.
+
+⚠️ Important Reminder After Creating the Token
+Copy the token immediately and store it somewhere safe. GitHub will not show it again after this point.
+
+🔄 Types of Tokens on GitHub
+Fine-grained Tokens
+
+Classic Tokens
+
+🔍 Differences Between Fine-grained and Classic Tokens
+Fine-grained tokens offer more granular permission control.
+
+Fine-grained tokens must have an expiration date; you can't disable it.
+
+They let you limit access to specific repositories or restrict to a subset of actions.
+
+You can also use them to configure access to your GitHub account.
+
+The content (string) of fine-grained tokens is longer and more complex.
+
+🧠 Best Practices for Naming Tokens
+Include the GitHub username of the person receiving the token or the repository name associated with the token.
+Example: john-smith-projectX-token
+
+⏳ Expiration Options for Classic Tokens
+7 days
+
+30 days
+
+60 days
+
+90 days
+
+Custom expiration
+
+No expiration (Not recommended)
+
+❌ Which Expiration Option Should You Avoid and Why?
+Avoid selecting “No expiration”, because if someone gains unauthorized access to the token, they could use it indefinitely. Always set an expiration date for better security.
+
+🔑 Access Options with Fine-grained Tokens
+Read-only access to all your public repositories
+
+Full access to all repositories
+
+Access to one or more specific repositories
+
+💬 What if You Forget to Copy the Token After Creation?
+You’ll need to delete the token and generate a new one, making sure to copy and save it this time.
+
+🧽 What Should You Do After the Person You Shared the Token With Has Finished Their Work?
+Delete the token to prevent any future unintended access.
+
+🗑️ How to Delete a Token in GitHub
+In the “Personal access tokens” section, you’ll see a list of your tokens. Click the “Delete” button next to the one you want to remove.
+
+👥 Does a Token Grant Access as a Collaborator?
+No. A user accessing a repository via token does not need to be added as a collaborator. They simply use the token as a key for access.
+
+🔒 Does a Token Grant Access to All Repositories or Just One?
+Only the repositories and permissions that you explicitly configure in the token will be accessible.
+
+💻 What Must a User Provide to Clone a Private Repository with a Token?
+The user must enter their GitHub username and paste the token as the password when prompted for credentials during the cloning process.
+
+🛠️ Common Use Cases for GitHub Tokens
+Secure access to your repositories from different devices
+
+Automating tasks using GitHub Actions
+
+Creating custom workflows
+
+Running personalized scripts
+
+### )(❗) run in git bash if you are not a collaborator
+
+    git clone <HTTPS-URL-HERE>
+
+git ask you about your username and your password in you password paste the token.
