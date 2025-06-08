@@ -417,3 +417,9 @@ Running personalized scripts
     git clone <HTTPS-URL-HERE>
 
 git ask you about your username and your password in you password paste the token.
+
+| Situation                            | Recommended Command         |
+| ------------------------------------ | --------------------------- |
+| First time pushing a new branch      | `git push -u origin Branch` |
+| Subsequent pushes on the same branch | `git push`                  |
+
